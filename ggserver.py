@@ -2,16 +2,16 @@ import gradio as gr
 from ctransformers import AutoModelForCausalLM, AutoTokenizer
 def load_llm():
     llm = AutoModelForCausalLM.from_pretrained(
-        "TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
+        "TheBloke/Silicon-Maid-7B-GGUF",
         model_type='llama',
         max_new_tokens= 512,
-        temperature = 0.2
+        temperature = 0.8
     )
     return llm
 
 def llm_function(message, chat_history):
     llm = load_llm()
-    starting_prompt = ("You respond with what's requested here:")
+    starting_prompt = ("You are a helpful AI. Respond with what's requested here:")
     #(" This is a specific context. Please consider this while generating responses: Respond with "
                        #"creative combination of a new word from an adjective and a noun on a new line in list format like \n1. "
                        #"_____ \n2. _____ 3. ______ ")  # Add your specific starting prompt here
@@ -25,7 +25,7 @@ def llm_function(message, chat_history):
 title = "Silicon Chat 2.0"
 
 examples = [
-    "Make a list of 1-3 combinations.",
+    "Say hello world!",
 ]
 #set share=true to enable sharing
 gr.ChatInterface(
