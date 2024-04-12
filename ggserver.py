@@ -11,10 +11,7 @@ def load_llm():
 
 def llm_function(message, chat_history):
     llm = load_llm()
-    starting_prompt = ("You are a helpful AI. Respond with what's requested here:")
-    #(" This is a specific context. Please consider this while generating responses: Respond with "
-                       #"creative combination of a new word from an adjective and a noun on a new line in list format like \n1. "
-                       #"_____ \n2. _____ 3. ______ ")  # Add your specific starting prompt here
+    starting_prompt = ("This is a specific context. Only respond with what's requested here: Generate a new description of the following word: " + {word})
     message = starting_prompt + message  # Prepend the starting prompt to the message
     response = llm(
         message
