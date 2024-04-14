@@ -2,7 +2,7 @@ import gradio as gr
 from ctransformers import AutoModelForCausalLM, AutoTokenizer
 def load_llm():
     llm = AutoModelForCausalLM.from_pretrained(
-        "TheBloke/Silicon-Maid-7B.Q8_0.GGUF/",
+        "TheBloke/Mistral-7B-Instruct-v0.2-GGUF/",
         model_type='llama',
         max_new_tokens= 512,
         temperature = 0.8
