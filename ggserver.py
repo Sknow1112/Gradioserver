@@ -11,7 +11,7 @@ def load_llm():
 
 def llm_function(message, chat_history):
     llm = load_llm()
-    starting_prompt = ("This is a specific context. Only respond with what's requested here: Generate a new description of the following word: " + {word})
+    starting_prompt = ("This is a specific context. Only respond with what's requested here:")
     message = starting_prompt + message  # Prepend the starting prompt to the message
     response = llm(
         message
