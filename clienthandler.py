@@ -3,7 +3,7 @@ import sqlite3
 from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from gradio_client import Client
-
+client = Client("http://localhost:7860")
 app = FastAPI()
 
 # Connect to the SQLite database (creates a new file if it doesn't exist)
